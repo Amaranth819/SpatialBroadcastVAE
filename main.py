@@ -117,7 +117,8 @@ def train(config):
 
                 show_x = torchvision.utils.make_grid(show_x, padding = 2, normalize = True).detach().cpu().numpy()
                 summary.add_image('Eval/Recon_Epoch%d' % e, show_x, e)
-                    
+            
+            net.train()
 
         # Save the model
         if e % 1 == 0:
